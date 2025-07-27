@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rapport Hebdomadaire – Armer Glendale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard">
+  <div class="dash-container">
+    <div class="titre">Rapport Hebdomadaire Sécurisé</div>
+
+    <input type="password" id="codeAcces" placeholder="Entrer le code d'accès">
+    <button onclick="verifierCode()">Valider</button>
+
+    <div id="rapport" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Grade</th>
+            <th>Heures</th>
+            <th>Rondes</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="classementHebdo">
+          <!-- Rempli dynamiquement -->
+        </tbody>
+      </table>
+      <br>
+      <a href="classement.html">⬅ Voir le classement du jour</a>
+    </div>
+  </div>
+
+  <script>
+    function verifierCode() {
+      const code = document.getElementById("codeAcces").value;
+      if (code === "Mrmanylemeilleur") {
+        document.getElementById("rapport").style.display = "block";
+        chargerClassement();
+      } else {
+        alert("Code incorrect.");
+      }
+    }
+
+    function chargerClassement() {
+      const donnees = JSON.parse(localStorage.getItem("donnees")) || [];
+      const classement = document.getElementById("classementHebdo");
+      classement.innerHTML = "";
+      donnees.sort((a, b) => b.score - a.score);
+      donnees.forEach((d) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${d.nom}</td>
+          <td>${d.grade}</td>
+          <td>${d.heures}</td>
+          <td>${d.rondes}</td>
+          <td>${d.score}</td>
+        `;
+        classement.appendChild(tr);
+      });
+    }
+  </script>
+</body>
+</html>

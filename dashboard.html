@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard">
+  <div class="dash-container">
+    <h2>Formulaire de rapport</h2>
+    <form id="formulaire">
+      <input type="text" id="nom" placeholder="Nom" required />
+      <select id="grade">
+        <option value="recrue">Recrue</option>
+        <option value="soldat">Soldat</option>
+        <option value="sergent">Sergent</option>
+        <option value="sergent-chef">Sergent-chef</option>
+        <option value="sergent-major">Sergent-major</option>
+        <option value="lieutenant">Lieutenant</option>
+        <option value="capitaine">Capitaine</option>
+        <option value="major">Major</option>
+        <option value="colonel">Colonel</option>
+        <option value="major général">Major général</option>
+        <option value="colonel général">Colonel général</option>
+        <option value="général fédéral adjoint">Général fédéral adjoint</option>
+      </select>
+      <input type="number" id="heures" placeholder="Heures de service" required />
+      <input type="number" id="rondes" placeholder="Nombre de rondes" required />
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <h2>Classement du jour</h2>
+    <table>
+      <thead>
+        <tr><th>Nom</th><th>Grade</th><th>Heures</th><th>Rondes</th><th>Score</th></tr>
+      </thead>
+      <tbody id="classementJour"></tbody>
+    </table>
+
+    <br><br>
+    <a href="rapports.html">Voir le rapport hebdomadaire</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

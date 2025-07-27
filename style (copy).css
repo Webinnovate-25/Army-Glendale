@@ -1,0 +1,97 @@
+/* Applique le fond d'écran à toute la page */
+body.dashboard {
+  background-image: url('glendale.jpg'); /* Assure-toi que l'image est bien dans tes fichiers */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cadre central flouté et centré */
+.dash-container {
+  background: rgba(0, 0, 0, 0.6); /* Couleur sombre semi-transparente */
+  backdrop-filter: blur(6px); /* Effet de flou */
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+  text-align: center;
+}
+
+/* Titre encadré vert lumineux */
+.titre {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #28a745;
+}
+
+/* Champs de formulaire et sélection */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Bouton stylisé */
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Tableau des classements */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ffffff44;
+  text-align: center;
+  color: white;
+}
+
+th {
+  background-color: rgba(40, 167, 69, 0.7);
+}
+
+a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+}
